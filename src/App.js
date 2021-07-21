@@ -5,6 +5,9 @@ import {
   applyNumber,
   changeOperation,
   clearDisplay,
+  addToMemory,
+  applyMemory,
+  clearMemory,
 } from "./actions/index";
 
 import "./App.css";
@@ -47,9 +50,18 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton
+                value={"M+"}
+                onClick={() => dispatch(addToMemory())}
+              />
+              <CalcButton
+                value={"MR"}
+                onClick={() => dispatch(applyMemory())}
+              />
+              <CalcButton
+                value={"MC"}
+                onClick={() => dispatch(clearMemory())}
+              />
             </div>
 
             <div className="row">
